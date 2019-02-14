@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import fb from './../config/Firebase'
 
 import Tictactoe from './tictactoe/Tictactoe'
+import Chatroom from './chatroom/Chatroom'
 
 class PlayPage extends Component {
   constructor(props){
@@ -75,7 +76,14 @@ class PlayPage extends Component {
         <p>Player 2: {(this.state.room.user_list !==undefined) ? this.state.room.user_list[1] : ""}</p>
         <button>Start</button>
         <button><a href="/#/games/tictactoe">Leave</a></button>
+        <div className="row">
+        <div className="col-md-6 col-lg-4">
         <Tictactoe id={this.props.match.params.id}/>
+        </div>
+        <div className="col-md-6 col-lg-4">
+        <Chatroom id={this.props.match.params.id} />
+        </div>
+        </div>
       </div>
     )
   }

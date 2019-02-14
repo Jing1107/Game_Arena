@@ -7,6 +7,7 @@ import GameRoomListPage from './GameRoomListPage'
 import Login from './Login'
 import PlayPage from './PlayPage'
 import Tictactoe from './tictactoe/Tictactoe'
+import Chatroom from './chatroom/Chatroom'
 
 class App extends Component {
 
@@ -43,7 +44,7 @@ class App extends Component {
       <Route exact path="/" render={ (props) => <LandingPage user={this.state.user} /> } />
       <Route path="/games/:name" render={ (props) => <GameRoomListPage {...props} user={this.state.user} /> } />
       <Route path="/session/:id" render={(props) => <PlayPage {...props} user={this.state.user} />} />
-      <Route path="/tictactoe" render={(props) => <Tictactoe {...props} />} />
+      <Route path="/chatroom" render={(props) => <Chatroom {...props} />} />
       </Switch>) : (<Login />) }
       </div>
     );

@@ -74,7 +74,9 @@ class GameRoomListPage extends Component {
                     <input type="submit" value="Create" />
                   </form>
                   {Object.keys(this.state.rooms).map((key) => {
-                    return (<GameRoom key={key} roomId={key} room={this.state.rooms[key]} user={this.props.user}/>)
+                    if(this.state.rooms[key].status === "before") {
+                      return (<GameRoom key={key} roomId={key} room={this.state.rooms[key]} user={this.props.user}/>)
+                    }
                     })
                   }
                 </div>
