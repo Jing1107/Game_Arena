@@ -37,6 +37,15 @@ nav {
 
 }
 
+.row {
+}
+
+.gameroom {
+  box-sizing:border-box;
+  margin: 20px 4%;
+  background-color: #ccc;
+}
+
 .portfolio {
   margin-top: 100px;
 }

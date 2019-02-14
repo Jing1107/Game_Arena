@@ -68,14 +68,14 @@ class GameRoomListPage extends Component {
               <h2 className="text-center text-uppercase text-secondary mb-0">{games[this.props.match.params.name]["name"]}</h2>
                 <hr className="star-dark mb-5" />
                 <div className="row">
-                  <form onSubmit={this.createNewRoom}>
+                  <form onSubmit={this.createNewRoom} className="col-md-12 col-lg-12">
                     <h3>Create new room</h3>
                     <input onChange={this.handleChange} placeholder="enter room name" />
                     <input type="submit" value="Create" />
                   </form>
                   {Object.keys(this.state.rooms).map((key) => {
                     if(this.state.rooms[key].status === "before") {
-                      return (<GameRoom key={key} roomId={key} room={this.state.rooms[key]} user={this.props.user}/>)
+                      return (<div className="gameroom col-md-3 col-lg-3"><GameRoom  key={key} roomId={key} room={this.state.rooms[key]} user={this.props.user}/></div>)
                     }
                     })
                   }

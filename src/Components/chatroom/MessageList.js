@@ -7,7 +7,8 @@ class MessageList extends Component {
   render() {
       return (
           <div className="message-list">
-            {Object.keys(this.props.messages).map((key) => {
+            {(this.props.messages === null) ? "" : 
+              Object.keys(this.props.messages).map((key) => {
                 return (<Message key={key} message={this.props.messages[key]}/>)
               })
             }

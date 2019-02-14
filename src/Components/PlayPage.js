@@ -3,6 +3,8 @@ import fb from './../config/Firebase'
 
 import Tictactoe from './tictactoe/Tictactoe'
 import Chatroom from './chatroom/Chatroom'
+import Nav from './Nav'
+import Footer from './Footer'
 
 class PlayPage extends Component {
   constructor(props){
@@ -12,8 +14,6 @@ class PlayPage extends Component {
       user : {},
       user_position : ''
     }
-
-
 
   }
 
@@ -71,19 +71,23 @@ class PlayPage extends Component {
   render() {
     return (
       <div>
+        <Nav user={this.state.user}/>
+        <div className="portfolio">
         <p>Game Room No: {this.props.match.params.id}</p>
         <p>Player 1: {(this.state.room.user_list !==undefined) ? this.state.room.user_list[0] : ""}</p>
         <p>Player 2: {(this.state.room.user_list !==undefined) ? this.state.room.user_list[1] : ""}</p>
         <button>Start</button>
         <button><a href="/#/games/tictactoe">Leave</a></button>
         <div className="row">
-        <div className="col-md-6 col-lg-4">
+        <div className="col-md-8 col-lg-8">
         <Tictactoe id={this.props.match.params.id}/>
         </div>
-        <div className="col-md-6 col-lg-4">
+        <div className="col-md-4 col-lg-4">
         <Chatroom id={this.props.match.params.id} />
         </div>
         </div>
+        </div>
+        <Footer />
       </div>
     )
   }
