@@ -12,3 +12,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.wrapper {
+  min-height: 100vh;
+  margin-bottom: -250px
+}
+
+footer, .pusher {
+  height: 250px;
+}
+
+nav {
+  min-height: 100px;
+
+}
+
+.portfolio {
+  margin-top: 100px;
+}

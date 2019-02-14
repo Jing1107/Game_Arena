@@ -229,7 +229,7 @@ header.masthead h2 {
 
 @media (min-width: 576px) {
   .portfolio {
-    margin-bottom: -30px;
+    margin-bottom: 350px;
   }
   .portfolio .portfolio-item {
     margin-bottom: 30px;
@@ -333,6 +333,8 @@ form .row:first-child .floating-label-form-group {
 
 .copyright {
   background-color: #1a252f;
+  position: relative;
+  bottom: 0;
 }
 
 a {
