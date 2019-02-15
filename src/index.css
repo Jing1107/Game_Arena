@@ -63,6 +63,12 @@ nav {
   border-radius: 0.5em;
 }
 
+.signIn {
+  margin: 10vh auto;
+  background-color: #cfe2f9;
+  padding: 20px;
+  border-radius: 0.5em;
+}
 
 .portfolio {
   margin-top: 100px;

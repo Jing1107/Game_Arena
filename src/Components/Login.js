@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import fb from './../config/Firebase.js';
+import logo from './../img/ga-logo.png';
+import Footer from './Footer'
+
 
 class Login extends Component {
   constructor(props) {
@@ -37,7 +40,10 @@ class Login extends Component {
   }
   render() {
     return (
-       <div className="col-md-6">
+      <div>
+
+       <div className="col-md-6 signIn">
+       <img className="img-fluid mb-5 d-block mx-auto" src={logo}  />
        <form>
       <div class="form-group">
        <label for="exampleInputEmail1">Email address</label>
@@ -53,6 +59,8 @@ class Login extends Component {
       <p>{this.state.message}</p>
  </form>
 
+ </div>
+ <Footer />
  </div>
     );
   }
