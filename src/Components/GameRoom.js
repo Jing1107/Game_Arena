@@ -19,11 +19,17 @@ class GameRoom extends Component {
 
   render () {
     return (
-      <div>
-        <h3>{this.props.room.name}</h3>
-        <p>Player 1: {this.props.room.user_list[0]}</p>
-        <p>Player 2: {this.props.room.user_list[1]}</p>
-        {<button><a href={`#/session/${this.props.roomId}`}>Join</a></button>}
+
+
+      <div class="card w-100">
+        <div class="card-body">
+          <h5 class="card-title">{this.props.room.name}</h5>
+          <h6>Player 1:</h6>
+          <p>{(this.props.room.user_list[0] === 0) ? "Empty" : this.props.room.user_list[0]}</p>
+          <h6>Player 2:</h6>
+          <p> {(this.props.room.user_list[1] === 0) ? "Empty" : this.props.room.user_list[1]}</p>
+          <a href={`#/session/${this.props.roomId}`} class="btn btn-primary">Join</a>
+          </div>
       </div>
     )
   }

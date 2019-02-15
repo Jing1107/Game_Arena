@@ -44,7 +44,6 @@ class App extends Component {
       <Route exact path="/" render={ (props) => <LandingPage user={this.state.user} /> } />
       <Route path="/games/:name" render={ (props) => <GameRoomListPage {...props} user={this.state.user} /> } />
       <Route path="/session/:id" render={(props) => <PlayPage {...props} user={this.state.user} />} />
-      <Route path="/chatroom" render={(props) => <Chatroom {...props} />} />
       </Switch>) : (<Login />) }
       </div>
     );

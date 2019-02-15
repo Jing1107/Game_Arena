@@ -73,11 +73,13 @@ class PlayPage extends Component {
       <div>
         <Nav user={this.state.user}/>
         <div className="portfolio">
-        <p>Game Room No: {this.props.match.params.id}</p>
-        <p>Player 1: {(this.state.room.user_list !==undefined) ? this.state.room.user_list[0] : ""}</p>
-        <p>Player 2: {(this.state.room.user_list !==undefined) ? this.state.room.user_list[1] : ""}</p>
-        <button>Start</button>
-        <button><a href="/#/games/tictactoe">Leave</a></button>
+        <div className="gameInfo">
+        <h2 className="text-center">{this.state.room.name}</h2>
+        <p><strong>Player 1:</strong> {(this.state.room.user_list !==undefined) ? this.state.room.user_list[0] : ""}</p>
+        <p><strong>Player 2:</strong> {(this.state.room.user_list !==undefined) ? this.state.room.user_list[1] : ""}</p>
+        <button className="btn btn-info">Start</button>
+        <a className="btn btn-danger" href="/#/games/tictactoe">Leave</a>
+        </div>
         <div className="row">
         <div className="col-md-8 col-lg-8">
         <Tictactoe id={this.props.match.params.id}/>

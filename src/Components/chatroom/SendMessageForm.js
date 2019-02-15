@@ -34,7 +34,7 @@ class SendMessageForm extends Component {
                 value = {this.state.message}
                 placeholder="SendMessageForm"
                 type="text" />
-              <button type="submit">Send</button>
+              <button className="btn btn-info" type="submit">Send</button>
           </form>
       )
   }

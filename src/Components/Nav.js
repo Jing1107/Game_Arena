@@ -21,9 +21,8 @@ class Nav extends Component {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <NavItem url="/#/" name="Home" />
-              <NavItem url="/#/games" name="Game"/>
-              <NavItem url="#" name="Login" />
-              <button onClick={this.logout}>Logout {this.props.user.email}</button>
+              <NavItem url="/#/games/tictactoe" name="Game"/>
+              <button className="btn btn-primary" onClick={this.logout}>Logout {this.props.user.email}</button>
             </ul>
           </div>
         </div>

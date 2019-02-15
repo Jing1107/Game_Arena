@@ -68,11 +68,27 @@ class GameRoomListPage extends Component {
               <h2 className="text-center text-uppercase text-secondary mb-0">{games[this.props.match.params.name]["name"]}</h2>
                 <hr className="star-dark mb-5" />
                 <div className="row">
-                  <form onSubmit={this.createNewRoom} className="col-md-12 col-lg-12">
+                  <form onSubmit={this.createNewRoom} className="newRoom col-md-12 col-lg-12">
                     <h3>Create new room</h3>
-                    <input onChange={this.handleChange} placeholder="enter room name" />
-                    <input type="submit" value="Create" />
+                    <div className="form-group">
+                    <label>Room name</label>
+                    <input className="form-control" onChange={this.handleChange} placeholder="enter room name" required />
+                    </div>
+                    <div className="form-group">
+                    <label>Select game</label>
+                    <select className="form-control">
+                    <option>Select a game...</option>
+                    </select>
+                    </div>
+                    <div className="form-check">
+                      <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
+                      <label className="form-check-label" for="defaultCheck1">
+                      Private Room
+                      </label>
+                      </div>
+                    <input className="btn btn-primary" type="submit" value="Create" />
                   </form>
+                  <h3 className="col-12 text-center mt-4">All Game Room</h3>
                   {Object.keys(this.state.rooms).map((key) => {
                     if(this.state.rooms[key].status === "before") {
                       return (<div className="gameroom col-md-3 col-lg-3"><GameRoom  key={key} roomId={key} room={this.state.rooms[key]} user={this.props.user}/></div>)
